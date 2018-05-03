@@ -1,0 +1,19 @@
+<% layout("layout") -%>
+
+<div class="categ">
+        <% for(var i of state){ %>
+            <div class="item">
+                <div class="row">
+                    <div class="col-md-9">
+                        <h3>
+                            <%= i.Title %>
+                        </h3>
+                        <p>
+                            <%= i.Content %>
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+            <% } %>
+    </div>

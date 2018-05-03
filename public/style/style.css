@@ -1,0 +1,390 @@
+body{
+    background-image: url('../img/menu.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+#logo{
+    text-align: left;
+    width:6%;
+}
+#logo > img:hover{
+    opacity: 0.8;
+}
+input:focus, button:focus{
+    outline: none;
+}
+#topMenu{
+    background-color: rgba(41, 41, 41, 0.979) !important;
+    box-shadow: inset 0 0 100px rgb(0, 0, 0);
+}
+#topMenu > div  {
+   margin-left: auto;
+   margin-right: auto;
+   text-align: center
+}
+#topMenu li{
+    margin-left: 20px;
+    font-size: 20px;
+    border-bottom: 3px solid transparent;
+    border-radius: 13px;
+    transition: 0.2s;
+}
+#topMenu li a{
+    color: orange;
+    font-size: 23px;
+    text-shadow:   0px 0px 5px rgb(255, 51, 0);
+    transition: 0.2s;
+}
+#topMenu li a:hover{
+    color: orangered;
+}
+#topMenu li:hover{
+    border-bottom: 3px solid orangered;
+}
+#topMenu li.topBtn:hover{
+    border-bottom: 4px solid transparent;
+}
+#singUp, #singIn, #logOut, #addNews, #contact{
+    margin-top: 5px;
+    background-color: orange;
+    box-shadow: inset 0 0 40px rgb(61, 2, 2);
+    color: black;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+#logOut{
+    color:black !important;
+    text-shadow: none !important;
+    font-size: 17px !important;
+}
+#singUp:hover, #singIn:hover,  #logOut:hover,#addNews:hover, #contact:hover{
+    box-shadow:  0 0 40px rgb(161, 78, 0);
+}
+#lang{
+    padding-top: 5px;
+}
+#lang:hover{
+    border-color: transparent !important;
+}
+#lang > a{
+    font-size: 18px !important;
+    margin:2px;
+}
+#mainCarucel {
+    box-shadow:  0 0 50px rgb(0, 0, 0);
+}
+.content {
+    margin-top: 50px;
+}
+.contact{
+    margin-top: 100px;
+    text-align: center;
+}
+.catHover{
+    display: none;
+    position: absolute;
+    z-index: 2;
+    background-color: rgba(83, 23, 0, 0.63);
+    box-shadow: inset 0 0 200px rgb(0, 0, 0);
+    border-radius: 20px;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left: 0;
+}
+.categores h3{
+    margin: 10px;
+    font-weight: bold;
+    color: orangered;
+}
+.catItems{
+    width: 40%;
+    margin: 10px 40px;
+    padding: 20px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.705);
+    position: relative;
+}
+.catItems img{
+   width: 100%;
+   border-radius: 5px;
+}
+.catItems:hover{
+    box-shadow:  0 0 80px rgb(243, 97, 0);
+}
+.catItems:hover > .catHover{
+    display: block;
+}
+a.more{
+    margin-top:46%;
+    width: 30%;
+    background-color: orangered;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    border:none;
+    box-shadow: inset 0 0  50px rgb(0, 0, 0);
+    cursor: pointer
+}
+a.more:hover{
+    box-shadow: none;
+}
+#map {
+    height: 400px;
+    width: 100%;
+}
+  #user_info{
+    position: absolute;
+    top:2px;
+    left:20%;
+    font-size: 20px;
+    color:red;
+  }
+  #regForm{
+      width: 35%;
+        padding: 50px;
+    text-align: center;
+      border-radius: 20px;
+      box-shadow: inset 0px 0px 80px rgb(0, 0, 0) ;
+      background-color: rgba(53, 53, 53, 0.959);
+      display:none;
+      position: fixed;
+      z-index: 2;
+      top:80px;
+      right: 15px;
+  }
+  #loginForm{
+      width: 25%;
+    padding: 50px;
+    text-align: center;
+      border-radius: 20px;
+      box-shadow: inset 0px 0px 80px rgb(0, 0, 0) ;
+      background-color: rgba(53, 53, 53, 0.959);
+      display:none;
+      position: fixed;
+      z-index: 2;
+      top:80px;
+      right: 15px;
+  }
+  #addForm{
+        width: 70%;
+        padding: 50px;
+        text-align: center;
+        border-radius: 20px;
+        box-shadow: inset 0px 0px 80px rgb(0, 0, 0) ;
+        background-color: rgba(53, 53, 53, 0.959);
+        position: fixed;
+        z-index: 5;
+        display: none;
+        top:80px;
+        right: 15%;
+  }
+  #loginForm input:focus, #regForm input:focus, #addForm input:focus, textarea:focus, .inp:focus{
+      box-shadow: 0px 0px 50px rgba(74, 173, 255, 0.897) ;
+  }
+  #regForm button, #loginForm button, #addForm button {
+    height:50px;
+    width:150px;
+    font-size: 22px;
+    color:white;
+    border:none;
+    margin:10px;
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 80px rgb(0, 0, 0) ;
+  }
+  #regForm input, #loginForm input , #addForm input  {
+      width: 100%;
+      height: 40px;
+      border-radius: 10px;
+      text-indent: 18px;
+      font-size: 18px;
+      margin-bottom: 20px;
+    transition: 0.2s;
+  }
+  textarea,.inp{
+    width: 100%;
+    border-radius: 10px;
+    text-indent: 18px;
+    font-size: 18px;
+    transition: 0.2s;
+  }
+  .inp{
+      width: 100%;
+      height: 40px;
+      border-radius: 10px;
+      text-indent: 18px;
+      font-size: 18px;
+      margin-bottom: 20px;
+  }
+  #regForm input[name="gender"]{
+      width: 20px;
+      height: 20px;
+    margin: 10px;
+  }
+  #regForm #userEmail{
+    margin-bottom: 5px;
+  }
+  .gender_div{
+    font-size: 25px;
+    color: rgb(0, 132, 255);
+  }
+  #login , #send , #add{
+    background-color: rgb(0, 132, 255);
+    width: 130px;
+    height: 50px;
+    font-size: 22px;
+    color:white;
+    border:none;
+    margin:10px;
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 80px rgb(0, 0, 0)
+  }
+  #login:hover, #send:hover, #add:hover{
+      box-shadow: 0px 0px 50px rgba(1, 141, 255, 0.897) ;
+  }
+  .close{
+      float: right;
+      margin-top: -30px;
+      margin-right: -25px;
+  }
+  .close img:hover{
+      opacity: 1;
+      cursor: pointer;
+  }
+  #regErr, #logErr, #addErr{
+    color:red;
+    font-size: 18px;
+      text-shadow: 0px 0px 50px rgb(255, 0, 0);
+  }
+  .loginError{
+    text-align: center;
+    color:darkred;
+  }
+  .btnTop{
+    position: fixed;
+    z-index: 5;
+    left:20px;
+    bottom: 30px;
+    width: 50px;
+    height: 50px;
+    color: white;
+    transition: 0.5s;
+    cursor: pointer;
+    display: none;
+    background-color: rgb(255, 101, 30);
+    border: none;
+    border-radius: 5px;
+    box-shadow: inset 0px 0px 50px rgb(0, 0, 0) ;
+ }
+ .btnTop:hover{
+    background-color: rgb(255, 56, 30);
+    box-shadow:  0px 0px 50px rgb(255, 123, 0) ;
+ }
+.categ{
+    margin-top:100px;
+    overflow: hidden;
+}
+.categ h1{
+    color:rgb(255, 123, 0);
+    text-align: center;
+    text-shadow: 0px 0px 20px rgb(70, 0, 0);
+ }
+ .item{
+     color: orange;
+     background-color: rgba(17, 17, 17, 0.747);
+     box-shadow: inset 0 0 80px rgb(0, 0, 0);
+     padding: 30px;
+     margin: 30px;
+     border-radius: 10px;
+ }
+ .item h3{
+    color: orangered;
+    text-shadow: 0px 0px 20px rgb(71, 17, 0);
+}
+.item img{
+    box-shadow:  0 0 80px rgb(0, 0, 0);
+    border-radius: 10px;
+}
+.item p{
+   font-size: 18px;
+}
+.readMore{
+    color: brown;
+    font-size: 17px;
+}
+.readMore:hover{
+    color: rgb(221, 34, 34);
+    text-decoration: none;
+}
+.pg{
+    color:rgb(255, 255, 255) ;
+    background-color: rgb(31, 31, 31);
+    border:none;
+    box-shadow:  inset 0 0 30px rgb(0, 0, 0);
+}
+.pg:hover{
+    background-color: brown;
+    color: aliceblue;
+}
+
+.about{
+    margin-top: 100px;
+    text-align: center;
+}
+.about h1{
+    color: orange;
+    font-size: 30px;
+    margin: 20px;
+}
+.about p{
+    color: orangered;
+    font-size:20px;
+}
+.err{
+    padding-top: 50px;
+    z-index: 5;
+    color: red;
+    font-size: 18px;
+    text-align: center;
+}
+footer{
+    text-align: center;
+    background-color: rgb(53, 53, 53);
+    box-shadow: inset 0 0 100px rgb(0, 0, 0);
+    overflow: hidden;
+    margin-top: 50px;
+    padding-top: 10px;
+    color: orange;
+}
+
+
+
+@media screen and  (max-width: 768px) {
+    .catItems{
+        width: 35%;
+    }
+    #regForm{
+        width: 60%;
+    }
+    #loginForm{
+        width: 40%;
+    }
+}
+@media screen and  (max-width: 500px) {
+    .catItems{
+        width: 85%;
+    }
+    #regForm{
+        width: 100%;
+    }
+    #loginForm{
+        width: 100%;
+    }
+}
+.mrg{
+  margin-top: 20px;
+}

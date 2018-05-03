@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="EdgarSargysn">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>
+        <%= title %>
+    </title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="/font/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/style/style.css">
+</head>
+
+<body>
+
+    <nav id='topMenu' class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a id="logo" class="navbar-brand" href="/">
+                <img src="/img/logo.png" alt="logo" width="70%">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/">
+                            <%= menu.Home %>
+                                <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/users/news">
+                            <%= menu.UNews %>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">
+                            <%= menu.About %>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact">
+                            <%= menu.Contact%>
+                        </a>
+                    </li>
+                    <% if(user_id == null) {%>
+                        <li class="topBtn nav-item">
+                            <button id="singUp" class="btn btn-md">
+                                <%= menu.Sign_Up%>
+                            </button>
+                        </li>
+                        <% } %>
+
+                            <% if(user_id == null) {%>
+                                <li class="topBtn nav-item">
+                                    <button id="singIn" class="btn btn-md ">
+                                        <%= menu.Sign_In%>
+                                    </button>
+                                </li>
+                                <% } %>
+
+                                    <% if(user_id) {%>
+                                        <li class="topBtn nav-item">
+                                            <a href="/users/exit" id="logOut" class="btn btn-md ">
+                                                <%= menu.LogOut %>
+                                            </a>
+                                        </li>
+                                        <% } %>
+                                            <% if(user_id) {%>
+                                                <li class="topBtn nav-item">
+                                                    <button id="addNews" class="btn btn-md "><%= menu.News %></button>
+                                                </li>
+                                                <% } %>
+                                                    <li id="lang" class=" nav-item">
+                                                        <a href="/en" id="en">en</a>
+                                                        <a href="/ru" id="ru">ру</a>
+                                                        <a href="/hy" id="hy">հյ</a>
+                                                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <div id="regForm" class="container">
+        <div class="close">
+            <img src="/img/close.png" alt="close" width="40px">
+        </div>
+        <p id='regErr'>
+        </p>
+        <form method="post">
+            <div class="row">
+                <div class="col-md-5">
+                    <input id="userName" type="text" required placeholder="Name" autocomplete="off">
+                </div>
+                <div class="col-md-7">
+                    <input id="userSurname" type="text" required placeholder="Surname" autocomplete="off">
+                </div>
+            </div>
+            <div>
+                <input id="userEmail" type="email" required placeholder="Email" autocomplete="off">
+            </div>
+            <div class="gender_div">
+                <input type="radio" name="gender" value="male">
+                <span class="gender">M</span>
+                <input type="radio" name="gender" value="female">
+                <span class="gender">F</span>
+            </div>
+            <div>
+                <input id="userPassword" type="password" required placeholder="Password">
+                <br>
+            </div>
+            <div>
+                <input id="passConfirm" type="password" required placeholder="Confirm password">
+                <br>
+            </div>
+            <button id="send">
+                <%= menu.Sign_Up %>
+            </button>
+        </form>
+    </div>
+
+
+    <div id="loginForm" class="container">
+        <div class="close">
+            <img src="/img/close.png" alt="close" width="40px">
+        </div>
+        <p id='logErr'>
+        </p>
+        <form method="post" action="/users/login">
+            <div>
+                <input id="loginEmail" type="email" placeholder="Email" autocomplete="off" name="login">
+            </div>
+            <div>
+                <input id="loginPassword" type="password" placeholder="Password" name="pass">
+                <br>
+            </div>
+            <button id="login">
+                <%= menu.Sign_In %>
+            </button>
+        </form>
+    </div>
+
+    <div id="addForm" class="container">
+        <div class="close">
+            <img src="/img/close.png" alt="close" width="40px">
+        </div>
+        <p id='addErr'>
+        </p>
+        <form method="post">
+                <div >
+                    <input id="newsTitle" type="text" required placeholder="Title" autocomplete="off">
+                </div>
+            <div>
+                <textarea name="content" id="newsContent" cols="80" rows="15" placeholder="News content ..."></textarea>
+            </div>
+
+            <button id="add">
+               <%= menu.News %>
+            </button>
+        </form>
+    </div>
+
+
+    <button class="btnTop btn btn-sm">
+        <i class="fa fa-angle-up fa-3x" aria-hidden="true"></i>
+    </button>
+
+
+    <%- body -%>
+
+
+
+        <footer>
+            <div id="map"></div>
+            <script>
+                function initMap() {
+                    var uluru = { lat: 40.792612, lng: 43.846967 };
+                    var map = new google.maps.Map(document.getElementById('map'), {
+                        zoom: 11,
+                        center: uluru
+                    });
+                    var marker = new google.maps.Marker({
+                        position: uluru,
+                        map: map
+                    });
+                }
+            </script>
+            <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBg740zgbQZgRAgsaXUMXxTVlLRCWUFodU&callback=initMap">
+            </script>
+            <h4>© Copyright 2017</h4>
+        </footer>
+
+
+
+        <script src="/script/jquery-3.2.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+            crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+            crossorigin="anonymous"></script>
+        <script src="/script/script.js"></script>
+</body>
+
+</html>

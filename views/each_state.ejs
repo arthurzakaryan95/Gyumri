@@ -1,0 +1,39 @@
+<% layout("layout") -%>
+
+
+    <div class="categ">
+        <% doc.forEach((each) => { %>
+            <div class="item">
+                <div class="row">
+                    <div class="col-md-3">
+                        <img width="100%" alt="pic" src='/<%= each.Photo1 %>' >
+                    </div>
+                    <div class="col-md-9">
+                        <h3>
+                            <%= each.Title %>
+                        </h3>
+                        <p>
+                            <%= each.Content %>
+                        </p>
+                    </div>
+                    <div class="col-md-3 mrg">
+                        <img width="100%" alt="pic" src='/<%= each.Photo2 %>' >
+                    </div>
+                    <div class="col-md-3 mrg">
+                        <img width="100%" alt="pic" src='/<%= each.Photo3 %>' >
+                    </div>
+                </div>
+                <div class="row">
+                  <!-- <video width="320" height="240">
+                    <source src="<%= each.Video %>">
+                  </video> -->
+                  <% if(each.Video ){%>
+                  <iframe width="560" height="315" class="mrg"
+                    src="<%= each.Video %>">
+                  </iframe>
+                  <%}%>
+                </div>
+
+            </div>
+            <% }) %>
+    </div>

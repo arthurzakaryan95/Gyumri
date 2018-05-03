@@ -1,0 +1,35 @@
+<% layout("layout") -%>
+
+
+    <div class="categ">
+        <% doc.forEach((each) => { %>
+            <div class="item">
+                <div class="row">
+                    <div class="col-md-9">
+                        <h3>
+                            <%= each.Title %>
+                        </h3>
+                        <p>
+                            <%= each.Content %>
+                        </p>
+                        <a class="readMore" href=<%= each.Href %> >Read more</a>
+                    </div>
+                    <div class="col-md-3">
+                        <img width="100%" alt="pic"  src='/<%= each.Photo1 %>' >
+                    </div>
+                </div>
+
+            </div>
+            <% }) %>
+    </div>
+    <div id="pages">
+        <nav aria-label="Page  example">
+            <ul class="pagination justify-content-center">
+              <% for(var i = 1; i <= pages; i++){%>
+                  <li class="page-item">
+                    <a class="pg page-link" href="/category/<%= Link %>/<%= i%>"><%= i%></a>
+                  </li>
+                  <% }%>
+            </ul>
+        </nav>
+    </div>
